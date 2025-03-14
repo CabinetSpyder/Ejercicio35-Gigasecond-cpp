@@ -23,7 +23,7 @@ TEST_CASE("date only specification of time",
     REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("second test for date only specification of time",
           "[6d86dd16-6f7a-47be-9e58-bb9fb2ae1433]") {
     const auto actual =
@@ -32,6 +32,7 @@ TEST_CASE("second test for date only specification of time",
     const ptime expected(time_from_string("2009-02-19 01:46:40"));
     REQUIRE(expected == actual);
 }
+
 
 TEST_CASE("third test for date only specification of time",
           "[77eb8502-2bca-4d92-89d9-7b39ace28dd5]") {
@@ -42,6 +43,7 @@ TEST_CASE("third test for date only specification of time",
     REQUIRE(expected == actual);
 }
 
+
 TEST_CASE("full time specified", "[c9d89a7d-06f8-4e28-a305-64f1b2abc693]") {
     const auto actual =
         gigasecond::advance(time_from_string("2015-01-24 22:00:00"));
@@ -49,6 +51,7 @@ TEST_CASE("full time specified", "[c9d89a7d-06f8-4e28-a305-64f1b2abc693]") {
     const ptime expected(time_from_string("2046-10-02 23:46:40"));
     REQUIRE(expected == actual);
 }
+
 
 TEST_CASE("full time with day roll-over",
           "[09d4e30e-728a-4b52-9005-be44a58d9eba]") {
@@ -58,4 +61,5 @@ TEST_CASE("full time with day roll-over",
     const ptime expected(time_from_string("2046-10-03 01:46:39"));
     REQUIRE(expected == actual);
 }
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif
